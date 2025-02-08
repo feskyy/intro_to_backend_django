@@ -1,11 +1,11 @@
-from rest_framework import generics
+
+from django.shortcuts import render, get_object_or_404
 from .models import Course
-from .serializers import CourseSerializer
 
-class CourseList(generics.ListAPIView):
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
+def course_list(request):
+    courses = Course.objects.all()
+    return render(request, 'subjects/courses_list.html', {'courses': courses})
 
-class CourseDetail(generics.RetrieveAPIView):
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
+def course_detail(request, id):
+    course = get_object_or_404(Course, pk=id)
+    return render(request, 'subjects/course_detail.html', {'course': course})
