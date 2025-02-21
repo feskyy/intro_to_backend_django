@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Index page</title>
+    </head>
+    <body>
+        <h1>Main page</h1>
+
+        <ol>
+            <li>NAME - SURNAME - MAJOR - YEAR_OF_STUDY - FACULTY</li>
+
+        </ol>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        NAME
+                    </td>
+                    <td>
+                        SURNAME
+                    </td>
+                    <td>
+                        MAJOR
+                    </td>
+                    <td>
+                        YEAR_OF_STUDY
+                    </td>
+                    <td>
+                        FACULTY
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ students.name }}</td>
+                    <td>{{ students.surname }}</td>
+                    <td>{{ students.major }}</td>
+                    <td>{{ students.year_of_study }}</td>
+                    <td>{{ students.faculty }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

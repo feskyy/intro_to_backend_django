@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Index page</title>
+    </head>
+    <body>
+        <h1>Main page</h1>
+
+        <ol>
+            <li>TITLE - TEXT - AUTHOR</li>
+        </ol>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        TITLE
+                    </td>
+                    <td>
+                        TEXT
+                    </td>
+                    <td>
+                        AUTHOR
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in subjects %}
+                <tr>
+                    <td>{{ subjects.title }}</td>
+                    <td>{{ subjects.text }}</td>
+                    <td>{{ subjects.author }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
